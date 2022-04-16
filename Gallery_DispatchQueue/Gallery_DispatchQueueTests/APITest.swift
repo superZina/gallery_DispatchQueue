@@ -21,10 +21,9 @@ class APITest: XCTestCase {
     }
 
     func testExample() throws {
-        print("===============API Test==================")
         manager.getPhotoList { error, list in
-            print("list: \(list)")
-            print("error: \(error)")
+            XCTAssertNil(error)            
+            XCTAssertNotNil(list)
         }
     }
 
