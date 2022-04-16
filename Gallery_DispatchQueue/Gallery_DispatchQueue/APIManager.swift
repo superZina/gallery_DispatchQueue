@@ -25,23 +25,17 @@ extension APIManager {
     // 받아온 이후에 컴플리션 핸들러로 사진 배열을 넘겨줘야 한다.
     func getPhotoList(completionHandler: @escaping (Error?, [Photo]?) -> ()) {
         
-        guard let url = URL(string: "\(Config.BaseURL)") else {
+        guard let url = URL(string: "\(Config.BaseURL)/photos?client_id=\(Config.AccessKey)") else {
             completionHandler(NetworkError.disconnected, nil)
             return
         }
-        // Authorization Header
-        let urlSessionConfig = URLSessionConfiguration.default
-        urlSessionConfig.httpAdditionalHeaders = Config.AuthorizationHeader
         
-        let session = URLSession(configuration: urlSessionConfig)
-        
-        // request and response
-        session.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if error != nil { completionHandler(NetworkError.disconnected, nil) }
             
             switch (response as? HTTPURLResponse)?.statusCode ?? 500 {
             case 200:
                 let photoList = self.decoded(data: data)
-                
                 if photoList != nil {
                     completionHandler(nil, photoList!)
                 }else{
@@ -51,6 +45,7 @@ extension APIManager {
                 completionHandler(ServerError.unknown, nil)
             }
         }
+        task.resume()
     }
     
     // Data를 디코딩하여 Photo 배열로 리턴하는 디코딩 함수.

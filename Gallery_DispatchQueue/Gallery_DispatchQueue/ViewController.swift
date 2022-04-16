@@ -18,7 +18,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("==========APITest===========")
+        APIManager().getPhotoList { error, photoList in
+            print(error?.localizedDescription)
+            print(photoList)
+            photoList?.forEach({ photo in
+                print(photo.user)
+            })
+            if error != nil {
+                print("list count: \(photoList?.count)")
+            }
+        }
     }
 }
 

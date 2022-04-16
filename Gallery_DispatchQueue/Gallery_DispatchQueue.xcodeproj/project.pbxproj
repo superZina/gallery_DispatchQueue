@@ -17,7 +17,19 @@
 		FFBCE32D28079E550063606A /* MainVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBCE32C28079E550063606A /* MainVIewModel.swift */; };
 		FFBCE3302807A3B30063606A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBCE32F2807A3B30063606A /* Photo.swift */; };
 		FFBCE33228085CF30063606A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBCE33128085CF30063606A /* APIManager.swift */; };
+		FFD0B50E280A842E00EFC448 /* Gallery_DispatchQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0B50D280A842E00EFC448 /* Gallery_DispatchQueueTests.swift */; };
+		FFD0B515280A849100EFC448 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0B514280A849100EFC448 /* APITest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFD0B50F280A842E00EFC448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFBCE30A280799CE0063606A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFBCE311280799CF0063606A;
+			remoteInfo = Gallery_DispatchQueue;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FFBCE312280799CF0063606A /* Gallery_DispatchQueue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gallery_DispatchQueue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +44,20 @@
 		FFBCE32C28079E550063606A /* MainVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVIewModel.swift; sourceTree = "<group>"; };
 		FFBCE32F2807A3B30063606A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		FFBCE33128085CF30063606A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FFD0B50B280A842E00EFC448 /* Gallery_DispatchQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gallery_DispatchQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD0B50D280A842E00EFC448 /* Gallery_DispatchQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery_DispatchQueueTests.swift; sourceTree = "<group>"; };
+		FFD0B514280A849100EFC448 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FFBCE30F280799CF0063606A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD0B508280A842E00EFC448 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBCE314280799CF0063606A /* Gallery_DispatchQueue */,
+				FFD0B50C280A842E00EFC448 /* Gallery_DispatchQueueTests */,
 				FFBCE313280799CF0063606A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBCE312280799CF0063606A /* Gallery_DispatchQueue.app */,
+				FFD0B50B280A842E00EFC448 /* Gallery_DispatchQueueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +119,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FFD0B50C280A842E00EFC448 /* Gallery_DispatchQueueTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFD0B514280A849100EFC448 /* APITest.swift */,
+				FFD0B50D280A842E00EFC448 /* Gallery_DispatchQueueTests.swift */,
+			);
+			path = Gallery_DispatchQueueTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +148,24 @@
 			productReference = FFBCE312280799CF0063606A /* Gallery_DispatchQueue.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FFD0B50A280A842E00EFC448 /* Gallery_DispatchQueueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFD0B513280A842E00EFC448 /* Build configuration list for PBXNativeTarget "Gallery_DispatchQueueTests" */;
+			buildPhases = (
+				FFD0B507280A842E00EFC448 /* Sources */,
+				FFD0B508280A842E00EFC448 /* Frameworks */,
+				FFD0B509280A842E00EFC448 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFD0B510280A842E00EFC448 /* PBXTargetDependency */,
+			);
+			name = Gallery_DispatchQueueTests;
+			productName = Gallery_DispatchQueueTests;
+			productReference = FFD0B50B280A842E00EFC448 /* Gallery_DispatchQueueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +178,10 @@
 				TargetAttributes = {
 					FFBCE311280799CF0063606A = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					FFD0B50A280A842E00EFC448 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = FFBCE311280799CF0063606A;
 					};
 				};
 			};
@@ -144,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				FFBCE311280799CF0063606A /* Gallery_DispatchQueue */,
+				FFD0B50A280A842E00EFC448 /* Gallery_DispatchQueueTests */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +212,13 @@
 				FFBCE322280799D00063606A /* LaunchScreen.storyboard in Resources */,
 				FFBCE31F280799D00063606A /* Assets.xcassets in Resources */,
 				FFBCE31D280799CF0063606A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFD0B509280A842E00EFC448 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +239,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFD0B507280A842E00EFC448 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD0B515280A849100EFC448 /* APITest.swift in Sources */,
+				FFD0B50E280A842E00EFC448 /* Gallery_DispatchQueueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFD0B510280A842E00EFC448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFBCE311280799CF0063606A /* Gallery_DispatchQueue */;
+			targetProxy = FFD0B50F280A842E00EFC448 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FFBCE31B280799CF0063606A /* Main.storyboard */ = {
@@ -370,6 +450,42 @@
 			};
 			name = Release;
 		};
+		FFD0B511280A842E00EFC448 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L398A7UTZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dispatchLib.jinha.Gallery-DispatchQueueTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gallery_DispatchQueue.app/Gallery_DispatchQueue";
+			};
+			name = Debug;
+		};
+		FFD0B512280A842E00EFC448 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3L398A7UTZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dispatchLib.jinha.Gallery-DispatchQueueTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gallery_DispatchQueue.app/Gallery_DispatchQueue";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -387,6 +503,15 @@
 			buildConfigurations = (
 				FFBCE327280799D00063606A /* Debug */,
 				FFBCE328280799D00063606A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFD0B513280A842E00EFC448 /* Build configuration list for PBXNativeTarget "Gallery_DispatchQueueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFD0B511280A842E00EFC448 /* Debug */,
+				FFD0B512280A842E00EFC448 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
