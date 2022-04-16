@@ -15,10 +15,8 @@ class ViewController: UIViewController {
     //MARK: - IBOutlets
     
 //    @IBOutlet weak var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("==========APITest===========")
         APIManager().getPhotoList { error, photoList in          
         }
     }

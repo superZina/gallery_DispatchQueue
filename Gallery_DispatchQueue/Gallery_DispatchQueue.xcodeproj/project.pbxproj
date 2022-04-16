@@ -19,6 +19,7 @@
 		FFBCE33228085CF30063606A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBCE33128085CF30063606A /* APIManager.swift */; };
 		FFD0B50E280A842E00EFC448 /* Gallery_DispatchQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0B50D280A842E00EFC448 /* Gallery_DispatchQueueTests.swift */; };
 		FFD0B515280A849100EFC448 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0B514280A849100EFC448 /* APITest.swift */; };
+		FFD0B517280A9CDB00EFC448 /* PhotoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0B516280A9CDB00EFC448 /* PhotoLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FFD0B50B280A842E00EFC448 /* Gallery_DispatchQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gallery_DispatchQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD0B50D280A842E00EFC448 /* Gallery_DispatchQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery_DispatchQueueTests.swift; sourceTree = "<group>"; };
 		FFD0B514280A849100EFC448 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
+		FFD0B516280A9CDB00EFC448 /* PhotoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				FFBCE32E2807A3A90063606A /* Model */,
 				FFBCE32B28079E350063606A /* ViewModel */,
+				FFD0B518280AA45800EFC448 /* Network */,
 				FFBCE315280799CF0063606A /* AppDelegate.swift */,
 				FFBCE317280799CF0063606A /* SceneDelegate.swift */,
 				FFBCE319280799CF0063606A /* ViewController.swift */,
@@ -98,7 +101,6 @@
 				FFBCE320280799D00063606A /* LaunchScreen.storyboard */,
 				FFBCE323280799D00063606A /* Info.plist */,
 				FFBCE32928079D3C0063606A /* Config.swift */,
-				FFBCE33128085CF30063606A /* APIManager.swift */,
 			);
 			path = Gallery_DispatchQueue;
 			sourceTree = "<group>";
@@ -126,6 +128,15 @@
 				FFD0B50D280A842E00EFC448 /* Gallery_DispatchQueueTests.swift */,
 			);
 			path = Gallery_DispatchQueueTests;
+			sourceTree = "<group>";
+		};
+		FFD0B518280AA45800EFC448 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FFBCE33128085CF30063606A /* APIManager.swift */,
+				FFD0B516280A9CDB00EFC448 /* PhotoLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 				FFBCE316280799CF0063606A /* AppDelegate.swift in Sources */,
 				FFBCE32D28079E550063606A /* MainVIewModel.swift in Sources */,
 				FFBCE32A28079D3C0063606A /* Config.swift in Sources */,
+				FFD0B517280A9CDB00EFC448 /* PhotoLoader.swift in Sources */,
 				FFBCE318280799CF0063606A /* SceneDelegate.swift in Sources */,
 				FFBCE33228085CF30063606A /* APIManager.swift in Sources */,
 			);
