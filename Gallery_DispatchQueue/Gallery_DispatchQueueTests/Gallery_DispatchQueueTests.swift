@@ -6,29 +6,34 @@
 //
 
 import XCTest
+@testable import Gallery_DispatchQueue
 
 class Gallery_DispatchQueueTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let photoLoader: PhotoLoader = PhotoLoader()
+    var storage: [String: Data] = [:]
+    let url = "https://images.unsplash.com/photo-1650174193274-377453d47b2b?ixid=MnwzMTkzODR8MHwxfGFsbHw3fHx8fHx8Mnx8MTY1MDE5NTIxMQ&ixlib=rb-1.2.1"
+
+    func testLoad() throws {
+        let data = photoLoader.load(url: url, dict: storage) { loaded, data in
+            if !loaded { self.storage[self.url] = data }
+        }
+        XCTAssertNotNil(data)
+        XCTAssertFalse(storage.isEmpty)
+    }
+    
+    func testLoadData() throws {
+        let data = photoLoader.loadData(from: url)
+        XCTAssertNotNil(data)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testContainsData() throws {
+        XCTAssertFalse(photoLoader.containImageData(url: url, in: storage))
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
-            // Put the code you want to measure the time of here.
         }
     }
 
