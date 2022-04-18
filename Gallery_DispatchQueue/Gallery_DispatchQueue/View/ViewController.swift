@@ -21,24 +21,13 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCell")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .init("reloadData") , object: nil)
-        
+     
         mainViewModel.getPhotoList { error in
             DispatchQueue.main.async { [weak self] in
-                self?.collectionView.reloadData()            }
+                self?.collectionView.reloadData()
+            }
         }
     }
-    
-    @objc func reloadData(notification: Notification) {
-        let data: Data = notification.object as? Data ?? Data()
-        print("after reload, data: \(data)")
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
-        }
-    }
-    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
