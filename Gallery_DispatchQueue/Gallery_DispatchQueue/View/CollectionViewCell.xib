@@ -19,17 +19,23 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vai-LN-jBl">
                         <rect key="frame" x="0.0" y="0.0" width="195" height="282"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xHe-iP-UES">
+                        <rect key="frame" x="87.5" y="131" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="vai-LN-jBl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0D7-Cr-i46"/>
+                <constraint firstItem="xHe-iP-UES" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="MEV-aQ-qS0"/>
                 <constraint firstAttribute="trailing" secondItem="vai-LN-jBl" secondAttribute="trailing" id="WYz-aM-gRb"/>
                 <constraint firstItem="vai-LN-jBl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gFT-gY-2AL"/>
                 <constraint firstAttribute="bottom" secondItem="vai-LN-jBl" secondAttribute="bottom" id="jcO-hJ-6WG"/>
+                <constraint firstItem="xHe-iP-UES" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="uXC-ny-DZs"/>
             </constraints>
             <size key="customSize" width="195" height="282"/>
             <connections>
+                <outlet property="activityIndicator" destination="xHe-iP-UES" id="exw-V7-lOi"/>
                 <outlet property="photoView" destination="vai-LN-jBl" id="bhv-ZP-7sT"/>
             </connections>
             <point key="canvasLocation" x="242.75362318840581" y="230.35714285714283"/>
