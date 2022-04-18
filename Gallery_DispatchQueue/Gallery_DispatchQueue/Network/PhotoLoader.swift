@@ -25,12 +25,11 @@ class PhotoLoader {
         
         //이미 캐싱 되어있다면
         if loaded {
-            return dict[url]
+            completion(loaded, dict[url])
         } else {
             loadData(from: url) { data in
                 completion(loaded, data)
             }
-            return nil
         }
     }
     

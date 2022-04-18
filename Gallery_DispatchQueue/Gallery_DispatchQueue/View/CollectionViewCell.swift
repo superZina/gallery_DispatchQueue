@@ -13,8 +13,9 @@ class CollectionViewCell: UICollectionViewCell {
     let photoLoader: PhotoLoader = PhotoLoader()
     
     func config(url: String?, viewModel: MainViewModel) {
-        photoLoader.load(url: url ?? "", dict: viewModel.storage) { loaded, data in
-            if !loaded { viewModel.storage[url ?? "" ] = data }
+        let urlString = url ?? ""
+        
+        viewModel.load(from: urlString, photoLoder: self.photoLoader) { data in
             if let imageData = data {
                 self.photoView.image = UIImage(data: imageData)
             }else {
