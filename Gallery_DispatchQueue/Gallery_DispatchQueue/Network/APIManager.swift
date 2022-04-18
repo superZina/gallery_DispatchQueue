@@ -38,6 +38,10 @@ extension APIManager {
                 let photoList = self.decoded(data: data)
                 if photoList != nil {
                     completionHandler(nil, photoList!)
+                    print("===============urls================")
+                    photoList?.forEach({ photo in
+                        print(photo.urls?.raw!)
+                    })
                 }else{
                     completionHandler(ServerError.unknown, nil)
                 }

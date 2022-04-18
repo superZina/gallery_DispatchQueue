@@ -14,7 +14,6 @@ class CollectionViewCell: UICollectionViewCell {
     
     func config(url: String?, viewModel: MainViewModel) {
         let urlString = url ?? ""
-        
         viewModel.load(from: urlString, photoLoder: self.photoLoader) { data in
             if let imageData = data {
                 self.photoView.image = UIImage(data: imageData)
@@ -22,5 +21,9 @@ class CollectionViewCell: UICollectionViewCell {
                 self.photoView.image = UIImage(named: Config.defaultImageName)!
             }
         }
+    }
+    
+    override func prepareForReuse() {
+        
     }
 }

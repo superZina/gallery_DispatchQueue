@@ -42,4 +42,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.config(url: url, viewModel: self.mainViewModel)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        (cell as? CollectionViewCell)?.config(url: nil, viewModel: mainViewModel)
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frame = collectionView.frame
+        let cellWidth = frame.width / 3
+        return CGSize(width: cellWidth, height: cellWidth)
+    }
 }
