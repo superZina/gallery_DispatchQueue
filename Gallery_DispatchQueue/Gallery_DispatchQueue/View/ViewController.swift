@@ -38,13 +38,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
-        let url = mainViewModel.cellForUrlAt(indexPath: indexPath)
-        cell.config(url: url, viewModel: self.mainViewModel)
+        cell.config(indexPath: indexPath, viewModel: self.mainViewModel)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        (cell as? CollectionViewCell)?.config(url: nil, viewModel: mainViewModel)
+        DispatchQueue.main.async {
+            (cell as? CollectionViewCell)?.photoView.image = nil
+        }
     }
 }
 
