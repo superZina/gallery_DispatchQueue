@@ -27,10 +27,11 @@ class CollectionViewCell: UICollectionViewCell {
             self.activityIndicator.startAnimating()
             self.activityIndicator.isHidden = true
         }
-        
     }
     
     override func prepareForReuse() {
         
+        self.photoView.image = nil
+        super.prepareForReuse()
     }
 }

@@ -42,11 +42,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            (cell as? CollectionViewCell)?.photoView.image = nil
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        DispatchQueue.main.async {
+//            (cell as? CollectionViewCell)?.photoView.image = nil
+//        }
+//    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
