@@ -7,31 +7,28 @@
 
 import UIKit
 
+var imageCache = [String: UIImage]()
+
+
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    private let defaultImage = UIImage(named: Config.defaultImageName)!
     
     func config(indexPath: IndexPath, viewModel: MainViewModel) {
-        DispatchQueue.main.async {
-            self.activityIndicator.isHidden = false
-            self.activityIndicator.startAnimating()
-        }
+        photoView.image = nil
+//        photoView.isLoading = true
         
         viewModel.load(indexPath: indexPath) { data in
-            if let imageData = data {
-                self.photoView.image = UIImage(data: imageData)
-            }else {
-                self.photoView.image = UIImage(named: Config.defaultImageName)!
+//            self.photoView.setImage(from: image)
+//            self.photoView.isLoading = false
+            DispatchQueue.main.async {
+                if let imageData = data {
+                    self.photoView.image = UIImage(data: imageData)
+                }else {
+                    self.photoView.image = self.defaultImage
+                }
             }
-            self.activityIndicator.startAnimating()
-            self.activityIndicator.isHidden = true
         }
-    }
-    
-    override func prepareForReuse() {
-        
-        self.photoView.image = nil
-        super.prepareForReuse()
     }
 }

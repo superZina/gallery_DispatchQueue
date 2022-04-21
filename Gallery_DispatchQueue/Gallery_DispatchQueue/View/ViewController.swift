@@ -38,15 +38,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
-        cell.config(indexPath: indexPath, viewModel: self.mainViewModel)
+        cell.config(indexPath: indexPath, viewModel: mainViewModel)
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        DispatchQueue.main.async {
-//            (cell as? CollectionViewCell)?.photoView.image = nil
-//        }
-//    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {

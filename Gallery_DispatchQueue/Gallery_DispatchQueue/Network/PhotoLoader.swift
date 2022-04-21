@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // 사진 한장씩 받고, 이미지 로드 후 처리하는 클래스
 // 사진 한장 당 클래스 하나
@@ -14,11 +15,8 @@ import Foundation
 // 2개의 디스패치 큐 존재 : 이미지 로드 작업을 하는 디스패치 큐와, 로드작업이 끝난 후 처리 작업을 하는 디스패치 큐
 class PhotoLoader {
     let workingQueue: DispatchQueue = DispatchQueue.global()
-    let workingGroup: DispatchGroup = DispatchGroup()
-    let completionQueue: DispatchQueue = DispatchQueue.main
     
-    //MARK: - completion의 Bool인자가 false라면 캐싱을 하는 과정이 필요함.
-    //MARK: Data가 nil이라면 default 이미지로 설정해줘야함.
+    // Data를 로드하는 함수
     func load(url: String, dict: [String: Data], completion: @escaping (Bool, Data?) -> ()) {
         // 이미지가 캐싱 되어있는지 확인
         let loaded = containImageData(url: url , in: dict)
@@ -45,14 +43,11 @@ class PhotoLoader {
             completion(nil)
             return
         }
-        var data: Data?
         
         workingQueue.async {
-            data = try? Data(contentsOf: url)
-            
-            self.completionQueue.async {
+            URLSession.shared.dataTask(with: url) { data, response, error in
                 completion(data)
-            }
+            }.resume()
         }
     }
 }
